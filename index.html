@@ -158,16 +158,22 @@
          .list::-webkit-scrollbar { width: 0 !important }
       </style>
    </head>
+
    <body>
       <div class = "container">
+         <!-- Display current date -->
          <div class = "info">
             <div class = "date">
                <div id="output"></div>
             </div>
          </div>
+
+         <!--  To-do content   -->
          <div class = "content">
             <div class = "task">
                <p>task for today</p>
+
+               <!-- Add task -->
                <div class = "flexBox">
                   <div class = "flexItem">
                      <input type="text" class="input" placeholder="What To Do ?">
@@ -176,17 +182,23 @@
                      <input type="button" id="add" class='add-item' value="Add">
                   </div>
                </div>
-               <ul class = "list"> 
-               </ul>
+
+
+               <!-- List of Task -->
+               <ul class = "list"></ul>
             </div>
          </div>
       </div>
+
       <script>
          $(document).ready(function() {
+
+            // To display current date
               
              const monthNames = ["January", "February", "March", "April", "May", "June",
                  "July", "August", "September", "October", "November", "December"
                  ];
+
              var today = new Date();
                  
              var day = today.getDate();
@@ -197,7 +209,10 @@
                  day = '0' + day
              }
              $("#output").html(day + ' ' + month + ' ' + year);
-         
+
+
+         // Add task to local storage
+
          var $button = $('.add-item');
          var $input = $('.input');
          var $list = $('.list');
@@ -250,3 +265,4 @@
       </script>
    </body>
 </html>
+
